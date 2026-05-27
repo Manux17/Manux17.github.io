@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Materia: Informatica - Sito personale di Emanuele Ruzziconi">
+  <title>Informatica | E. Ruzziconi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="has-navbar-fixed-top">
+
+  <!-- Navbar -->
+  <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 has-text-white mb-0" href="index.html">
+          E. Ruzziconi
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html#home">Home</a>
+          <a class="navbar-item" href="index.html#chi-sono">Chi sono</a>
+          <a class="navbar-item" href="index.html#passioni">Passioni</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Materie</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item is-active" href="materia-informatica.html">Informatica</a>
+              <a class="navbar-item" href="materia-sistemi-reti.html">Sistemi e Reti</a>
+              <a class="navbar-item" href="materia-tpsit.html">TPSIT</a>
+              <a class="navbar-item" href="materia-gpoi.html">GPOI</a>
+              <a class="navbar-item" href="materia-matematica.html">Matematica</a>
+              <a class="navbar-item" href="materia-ia.html">Intelligenza Artificiale</a>
+              <a class="navbar-item" href="materia-italiano.html">Italiano</a>
+              <a class="navbar-item" href="materia-storia.html">Storia</a>
+              <a class="navbar-item" href="materia-inglese.html">Inglese</a>
+              <a class="navbar-item" href="materia-scienze-motorie.html">Scienze Motorie</a>
+              <a class="navbar-item" href="materia-religione.html">Religione</a>
+            </div>
+          </div>
+          
+          <a class="navbar-item" href="FSL.html">FSL (PCTO)</a>
+          <a class="navbar-item" href="educazione-civica.html">Educazione Civica</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Materia -->
+  <section class="hero is-info is-small fade-in-up">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">Informatica</h1>
+        <h2 class="subtitle is-4 mt-2">Progetto Chat-Room</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container fade-in-up">
+      <div class="box content is-medium">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <p>Ho sviluppato un'applicazione web di messaggistica chiamata ChatRoom, scritta interamente in PHP con approccio monolitico, utilizzando Bulma come framework CSS e MySQLi per la gestione del database. L'applicazione permette agli utenti di registrarsi e autenticarsi, creare chatroom, scambiare messaggi e invitare altri utenti a partecipare, con un meccanismo di invito riservato al creatore della stanza.</p>
+            <p>Dal punto di vista della sicurezza, ho implementato l'hashing delle password con password_hash() e i prepared statements per prevenire SQL injection. È stata un'esperienza che mi ha coinvolto, perché mi piacciono le sfide e mi piace mettermi alla prova: riuscire ad applicare concretamente ciò che avevo studiato in un'applicazione funzionante è stato gratificante, e i primi problemi che ho incontrato sono riuscito a risolverli senza particolari difficoltà.</p>
+            <p>Ecco alcune foto della schermata dell'applicazione.</p>
+          </div>
+          
+          <div class="column is-4">
+            <figure class="image">
+              <img src="immagini/materia-informatica1.png" alt="Schermata ChatRoom 1" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+          <div class="column is-4">
+            <figure class="image">
+              <img src="immagini/materia-informatica2.png" alt="Schermata ChatRoom 2" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+          <div class="column is-4">
+            <figure class="image">
+              <img src="immagini/materia-informatica3.png" alt="Schermata ChatRoom 3" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer has-background-dark has-text-white mt-6">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Emanuele Ruzziconi</strong> - Esame di Stato 2025/2026<br>
+        IIS Marconi Pieralisi di Jesi - Indirizzo Informatica e Telecomunicazioni
+      </p>
+      <div class="is-flex is-justify-content-center" style="gap: 1.5rem; flex-wrap: wrap;">
+        <a href="mailto:emanueleruzziconi1@gmail.com" class="has-text-info">emanueleruzziconi1@gmail.com</a>
+        <a href="tel:3347134379" class="has-text-info">3347134379</a>
+        <p>Via V. de grandis, 2 - Ostra (AN)</p>
+      </div>
+      <div class="is-flex is-justify-content-center mt-3" style="gap: 1.5rem;">
+        <a href="https://github.com/Manux17" class="has-text-white" target="_blank">GitHub</a>
+        <a href="https://instagram.com/manu_ruzzi_" class="has-text-white" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

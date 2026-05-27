@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Materia: Matematica - Sito personale di Emanuele Ruzziconi">
+  <title>Matematica | E. Ruzziconi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="has-navbar-fixed-top">
+
+  <!-- Navbar -->
+  <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 has-text-white mb-0" href="index.html">
+          E. Ruzziconi
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html#home">Home</a>
+          <a class="navbar-item" href="index.html#chi-sono">Chi sono</a>
+          <a class="navbar-item" href="index.html#passioni">Passioni</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Materie</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="materia-informatica.html">Informatica</a>
+              <a class="navbar-item" href="materia-sistemi-reti.html">Sistemi e Reti</a>
+              <a class="navbar-item" href="materia-tpsit.html">TPSIT</a>
+              <a class="navbar-item" href="materia-gpoi.html">GPOI</a>
+              <a class="navbar-item is-active" href="materia-matematica.html">Matematica</a>
+              <a class="navbar-item" href="materia-ia.html">Intelligenza Artificiale</a>
+              <a class="navbar-item" href="materia-italiano.html">Italiano</a>
+              <a class="navbar-item" href="materia-storia.html">Storia</a>
+              <a class="navbar-item" href="materia-inglese.html">Inglese</a>
+              <a class="navbar-item" href="materia-scienze-motorie.html">Scienze Motorie</a>
+              <a class="navbar-item" href="materia-religione.html">Religione</a>
+            </div>
+          </div>
+          
+          <a class="navbar-item" href="FSL.html">FSL (PCTO)</a>
+          <a class="navbar-item" href="educazione-civica.html">Educazione Civica</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Materia -->
+  <section class="hero is-info is-small fade-in-up">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">Matematica</h1>
+        <h2 class="subtitle is-4 mt-2">Gli Integrali</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container fade-in-up">
+      <div class="box content is-medium">
+        <p>La matematica quest'anno mi è sembrata diversa. Ho approfondito il concetto di integrale, che si divide in tre grandi categorie.</p>
+
+        <div class="columns is-multiline mt-5">
+          
+          <div class="column is-8">
+            <h3 class="title is-4 has-text-primary">1. Integrale Indefinito</h3>
+            <p>L'integrale indefinito di f(x) è l'insieme di tutte le primitive F(x) tali che F'(x) = f(x).</p>
+            <p><strong>Formula:</strong> ∫ f(x) dx = F(x) + C (C = costante di integrazione)</p>
+            <p><strong>Formule fondamentali:</strong></p>
+            <ul>
+              <li>∫xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ -1)</li>
+              <li>∫ 1/x dx = ln|x| + C</li>
+              <li>∫ eˣ dx = eˣ + C</li>
+              <li>∫ sin x dx = −cos x + C</li>
+              <li>∫ cos x dx = sin x + C</li>
+              <li>∫ 1/(1+x²) dx = arctan x + C</li>
+            </ul>
+            <p><strong>Tecniche di integrazione:</strong></p>
+            <ul>
+              <li><strong>Linearità:</strong> ∫[af + bg]dx = a∫f dx + b∫g dx</li>
+              <li><strong>Sostituzione:</strong> x = g(t), dx = g'(t) dt</li>
+              <li><strong>Per parti:</strong> ∫ u·v' dx = uv − ∫ u'·v dx</li>
+              <li><strong>Frazioni parziali:</strong> scomponi il denominatore e integra termine per termine</li>
+            </ul>
+          </div>
+          <div class="column is-4">
+            <figure class="image">
+              <img src="immagini/materia-matematicaSs.gif" alt="Integrazione per Sostituzione" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+
+          <div class="column is-8">
+            <h3 class="title is-4 has-text-primary mt-5">2. Integrale Definito</h3>
+            <p>Rappresenta l'area algebrica tra il grafico di f(x) e l'asse x nell'intervallo [a,b]. Le aree sotto l'asse contano negative.</p>
+            <p><strong>Teorema Fondamentale del Calcolo:</strong><br>
+            ∫ₐᵇ f(x) dx = F(b) − F(a)</p>
+            <p><strong>Applicazioni:</strong> area tra due curve, lunghezza d'arco, volume di rotazione, lavoro.</p>
+          </div>
+          <div class="column is-4">
+            <figure class="image mt-5">
+              <img src="immagini/materia-matematicaDef.gif" alt="Integrale Definito" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+
+          <div class="column is-8">
+            <h3 class="title is-4 has-text-primary mt-5">3. Integrale Improprio</h3>
+            <p>Si usa quando l'intervallo è illimitato oppure f(x) ha una discontinuità. Si definisce tramite un limite.</p>
+            <p><strong>Tipo 1 – estremo infinito:</strong><br>
+            ∫ₐ⁺∞ f(x) dx = lim (t→+∞) ∫ₐᵗ f(x) dx</p>
+            <p><strong>Tipo 2 – singolarità in x = b:</strong><br>
+            ∫ₐᵇ f(x) dx = lim (t→b⁻) ∫ₐᵗ f(x) dx</p>
+            <p><strong>Carattere dell'integrale:</strong></p>
+            <ul>
+              <li><strong>Converge</strong> → il limite esiste ed è finito</li>
+              <li><strong>Diverge</strong> → il limite è ±∞</li>
+              <li><strong>Indeterminato</strong> → il limite non esiste</li>
+            </ul>
+          </div>
+          <div class="column is-4">
+            <figure class="image mt-5">
+              <img src="immagini/materia-matematicaImp.jpg" alt="Integrale Improprio" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer has-background-dark has-text-white mt-6">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Emanuele Ruzziconi</strong> - Esame di Stato 2025/2026<br>
+        IIS Marconi Pieralisi di Jesi - Indirizzo Informatica e Telecomunicazioni
+      </p>
+      <div class="is-flex is-justify-content-center" style="gap: 1.5rem; flex-wrap: wrap;">
+        <a href="mailto:emanueleruzziconi1@gmail.com" class="has-text-info">emanueleruzziconi1@gmail.com</a>
+        <a href="tel:3347134379" class="has-text-info">3347134379</a>
+        <p>Via V. de grandis, 2 - Ostra (AN)</p>
+      </div>
+      <div class="is-flex is-justify-content-center mt-3" style="gap: 1.5rem;">
+        <a href="https://github.com/Manux17" class="has-text-white" target="_blank">GitHub</a>
+        <a href="https://instagram.com/manu_ruzzi_" class="has-text-white" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

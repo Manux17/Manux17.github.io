@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Materia: Sistemi e Reti - Sito personale di Emanuele Ruzziconi">
+  <title>Sistemi e Reti | E. Ruzziconi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="has-navbar-fixed-top">
+
+  <!-- Navbar -->
+  <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item title is-4 has-text-white mb-0" href="index.html">
+          E. Ruzziconi
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html#home">Home</a>
+          <a class="navbar-item" href="index.html#chi-sono">Chi sono</a>
+          <a class="navbar-item" href="index.html#passioni">Passioni</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Materie</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="materia-informatica.html">Informatica</a>
+              <a class="navbar-item is-active" href="materia-sistemi-reti.html">Sistemi e Reti</a>
+              <a class="navbar-item" href="materia-tpsit.html">TPSIT</a>
+              <a class="navbar-item" href="materia-gpoi.html">GPOI</a>
+              <a class="navbar-item" href="materia-matematica.html">Matematica</a>
+              <a class="navbar-item" href="materia-ia.html">Intelligenza Artificiale</a>
+              <a class="navbar-item" href="materia-italiano.html">Italiano</a>
+              <a class="navbar-item" href="materia-storia.html">Storia</a>
+              <a class="navbar-item" href="materia-inglese.html">Inglese</a>
+              <a class="navbar-item" href="materia-scienze-motorie.html">Scienze Motorie</a>
+              <a class="navbar-item" href="materia-religione.html">Religione</a>
+            </div>
+          </div>
+          
+          <a class="navbar-item" href="FSL.html">FSL (PCTO)</a>
+          <a class="navbar-item" href="educazione-civica.html">Educazione Civica</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Materia -->
+  <section class="hero is-info is-small fade-in-up">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">Sistemi e Reti</h1>
+        <h2 class="subtitle is-4 mt-2">VPN (Virtual Private Network)</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="container fade-in-up">
+      <div class="box content is-medium">
+        <div class="columns">
+          <div class="column is-8">
+            <h3 class="title is-4 has-text-primary">1. Cos'è una VPN</h3>
+            <p>Una VPN (Virtual Private Network) è una rete privata creata dentro un'infrastruttura pubblica. Crea un tunnel cifrato su Internet: il traffico al suo interno è illeggibile per chi lo intercetta. I 3 problemi principali sono: variabilità dei tempi di trasferimento, controllo degli accessi e sicurezza delle trasmissioni.</p>
+
+            <h3 class="title is-4 has-text-primary mt-5">2. Tipi di VPN</h3>
+            <ul>
+              <li><strong>Remote Access VPN (Client-to-Site):</strong> permette a un singolo utente di connettersi alla LAN aziendale da remoto, come se fosse fisicamente in ufficio. Usa un NAS (Network Access Server) per l'autenticazione tramite RADIUS (AAA: Authentication, Authorization, Accounting) e un software VPN Client sul dispositivo dell'utente.</li>
+              <li><strong>Site-to-Site VPN:</strong> collega reti di sedi diverse. Gli utenti non se ne accorgono, è tutto gestito dai gateway. Si divide in:
+                <ul>
+                  <li><strong>Intranet-based:</strong> tutte le sedi appartengono alla stessa azienda.</li>
+                  <li><strong>Extranet-based:</strong> collega aziende partner con uno spazio condiviso limitato.</li>
+                </ul>
+              </li>
+              <li><strong>VPN Commerciali (uso personale):</strong> usate per streaming, gaming, home banking su Wi-Fi pubblici, bypassare censure.</li>
+            </ul>
+
+            <h3 class="title is-4 has-text-primary mt-5">3. Sicurezza VPN: I Tre Pilastri</h3>
+            <ul>
+              <li><strong>Autenticazione:</strong> l'utente si autentica al NAS con user+password, pin, chiave elettronica o QR code (MultiFactor Authentication – MFA).</li>
+              <li><strong>Cifratura:</strong> il traffico è cifrato con algoritmi come 3DES, IDEA, AES. Le chiavi sono negoziate tramite IKE (Internet Key Exchange).</li>
+              <li><strong>Tunneling:</strong> i pacchetti originali vengono incapsulati in pacchetti esterni. In modalità sicura vengono anche cifrati prima dell'incapsulamento.
+                <ul>
+                  <li><strong>Modalità Trasporto:</strong> solo i dati sono cifrati, l'header IP rimane visibile. Usata per comunicazioni host-to-host.</li>
+                  <li><strong>Modalità Tunnel:</strong> l'intero pacchetto (header + dati) viene incapsulato in un nuovo pacchetto. Gestita da router/firewall.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3 class="title is-4 has-text-primary mt-5">4. Protocolli di Tunneling</h3>
+            <p><strong>IPsec</strong> – opera a livello Network (Layer 3), garantisce sicurezza end-to-end. Composto da:</p>
+            <ul>
+              <li>AH (Authentication Header): autentica e garantisce integrità, ma NON cifra.</li>
+              <li>ESP (Encapsulating Security Payload): autentica, garantisce integrità E cifra. È il più usato.</li>
+              <li>IKE (Internet Key Exchange): negozia le chiavi tra i due endpoint in due fasi.</li>
+            </ul>
+            <p>Le Security Association (SA) sono accordi tra i due nodi che definiscono protocollo e cifratura da usare. Sono unidirezionali (ne servono due per comunicare). Gestite da SAD (database delle SA attive) e SPD (database delle politiche di sicurezza).</p>
+            
+            <p><strong>SSL/TLS</strong> – alternativa a IPsec, opera a livello Session/Trasporto. Struttura a due livelli:</p>
+            <ul>
+              <li>Record Protocol: frammenta, comprime e cifra i dati.</li>
+              <li>Handshake Protocol: gestisce autenticazione e negoziazione della crittografia.</li>
+            </ul>
+            <p>L'handshake avviene in 4 passi: il client si connette, il server invia il certificato digitale, il client lo verifica e invia la propria chiave cifrata, il server conferma e inizia la comunicazione cifrata.</p>
+
+            <h3 class="title is-4 has-text-primary mt-5">5. VPN BGP/MPLS</h3>
+            <p>Offerta dagli ISP come servizio gestito. Non cifra i dati ma separa logicamente il traffico. Componenti: CE (Customer Edge), PE (Provider Edge), P (Provider core router).</p>
+
+            <h3 class="title is-4 has-text-primary mt-5">6. Tipi di VPN per Livello di Sicurezza</h3>
+            <ul>
+              <li><strong>Trusted VPN (es. MPLS):</strong> la riservatezza è garantita dall'ISP tramite separazione logica, senza cifratura.</li>
+              <li><strong>Secure VPN (es. IPsec, SSL/TLS):</strong> usano cifratura e tunneling, ma i percorsi passano per rete pubblica.</li>
+              <li><strong>Hybrid VPN:</strong> combinano le due: la rete dell'ISP è Trusted, le connessioni remote usano cifratura Secure.</li>
+            </ul>
+          </div>
+          
+          <div class="column is-4">
+            <figure class="image is-square">
+              <img src="immagini/materia-sistemi&reti.svg" alt="Rappresentazione Sistemi e Reti" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer has-background-dark has-text-white mt-6">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Emanuele Ruzziconi</strong> - Esame di Stato 2025/2026<br>
+        IIS Marconi Pieralisi di Jesi - Indirizzo Informatica e Telecomunicazioni
+      </p>
+      <div class="is-flex is-justify-content-center" style="gap: 1.5rem; flex-wrap: wrap;">
+        <a href="mailto:emanueleruzziconi1@gmail.com" class="has-text-info">emanueleruzziconi1@gmail.com</a>
+        <a href="tel:3347134379" class="has-text-info">3347134379</a>
+        <p>Via V. de grandis, 2 - Ostra (AN)</p>
+      </div>
+      <div class="is-flex is-justify-content-center mt-3" style="gap: 1.5rem;">
+        <a href="https://github.com/Manux17" class="has-text-white" target="_blank">GitHub</a>
+        <a href="https://instagram.com/manu_ruzzi_" class="has-text-white" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

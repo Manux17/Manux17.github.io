@@ -67,31 +67,29 @@
 
   <!-- Main Content -->
   <main class="section">
-    <div class="container fade-in-up">
+    <div class="container fade-in-up" style="max-width: 900px;">
       <div class="box content is-medium">
-        <div class="columns">
-          <div class="column is-8">
-            <p>La programmazione concorrente gestisce più processi che girano contemporaneamente condividendo risorse. I rischi principali sono: race condition, deadlock, starvation e inconsistenza dei dati. Per studiarli sono stati definiti quattro problemi classici.</p>
+        
+        <figure class="image is-pulled-right ml-5 mb-5" style="width: 350px; max-width: 100%;">
+          <img src="immagini/materia-tpsit.png" alt="Immagine TPSIT" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </figure>
 
-            <h3 class="title is-4 has-text-primary mt-5">1. Produttore e Consumatore</h3>
-            <p>Un produttore inserisce dati in un buffer condiviso, un consumatore li preleva. Il rischio è scrivere su un buffer pieno o leggere da uno vuoto. Modella situazioni reali come code di stampa e pipeline di dati.</p>
+        <p>La programmazione concorrente gestisce più processi che girano contemporaneamente condividendo risorse. I rischi principali sono: race condition, deadlock, starvation e inconsistenza dei dati. Per studiarli sono stati definiti quattro problemi classici.</p>
 
-            <h3 class="title is-4 has-text-primary mt-5">2. Lettori e Scrittori</h3>
-            <p>Più processi accedono a una risorsa condivisa (es. database): i lettori possono farlo contemporaneamente, gli scrittori no — devono avere accesso esclusivo. Il problema è bilanciare le priorità senza causare starvation.</p>
+        <h3 class="title is-4 has-text-primary mt-5">1. Produttore e Consumatore</h3>
+        <p>Un produttore inserisce dati in un buffer condiviso, un consumatore li preleva. Il rischio è scrivere su un buffer pieno o leggere da uno vuoto. Modella situazioni reali come code di stampa e pipeline di dati.</p>
 
-            <h3 class="title is-4 has-text-primary mt-5">3. Filosofi a Cena</h3>
-            <p>Cinque filosofi condividono cinque bacchette: per mangiare ognuno ne ha bisogno di due. Se tutti prendono una bacchetta e aspettano l'altra si verifica deadlock. È il modello classico della competizione su risorse multiple.</p>
+        <h3 class="title is-4 has-text-primary mt-5">2. Lettori e Scrittori</h3>
+        <p>Più processi accedono a una risorsa condivisa (es. database): i lettori possono farlo contemporaneamente, gli scrittori no — devono avere accesso esclusivo. Il problema è bilanciare le priorità senza causare starvation.</p>
 
-            <h3 class="title is-4 has-text-primary mt-5">4. Barbiere Sonnolento</h3>
-            <p>Un barbiere serve un cliente alla volta; se non ci sono clienti dorme, se le sedie d'attesa sono piene il cliente va via. Il problema è sincronizzare correttamente l'accesso alla sala d'attesa. Modella sistemi di accodamento come call center e server.</p>
-          </div>
-          
-          <div class="column is-4">
-            <figure class="image">
-              <img src="immagini/materia-tpsit.png" alt="Immagine TPSIT" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            </figure>
-          </div>
-        </div>
+        <h3 class="title is-4 has-text-primary mt-5">3. Filosofi a Cena</h3>
+        <p>Cinque filosofi condividono cinque bacchette: per mangiare ognuno ne ha bisogno di due. Se tutti prendono una bacchetta e aspettano l'altra si verifica deadlock. È il modello classico della competizione su risorse multiple.</p>
+
+        <h3 class="title is-4 has-text-primary mt-5">4. Barbiere Sonnolento</h3>
+        <p>Un barbiere serve un cliente alla volta; se non ci sono clienti dorme, se le sedie d'attesa sono piene il cliente va via. Il problema è sincronizzare correttamente l'accesso alla sala d'attesa. Modella sistemi di accodamento come call center e server.</p>
+        
+        <div class="is-clearfix"></div>
+        
       </div>
     </div>
   </main>

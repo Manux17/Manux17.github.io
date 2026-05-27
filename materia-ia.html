@@ -67,40 +67,38 @@
 
   <!-- Main Content -->
   <main class="section">
-    <div class="container fade-in-up">
+    <div class="container fade-in-up" style="max-width: 900px;">
       <div class="box content is-medium">
-        <div class="columns">
-          <div class="column is-8">
-            <p>Le CNN (Convolutional Neural Networks) sono reti neurali utilizzate soprattutto per l’elaborazione delle immagini. Sono nate per superare i limiti delle normali reti neurali quando devono lavorare con immagini ad alta risoluzione.</p>
-            
-            <p>Le CNN funzionano analizzando l’immagine in modo gerarchico:</p>
-            <ul>
-              <li>i primi strati riconoscono caratteristiche semplici come bordi e linee;</li>
-              <li>gli strati successivi combinano queste informazioni per riconoscere forme più complesse;</li>
-              <li>gli ultimi strati riescono a identificare oggetti completi.</li>
-            </ul>
+        
+        <figure class="image is-pulled-right ml-5 mb-5" style="width: 350px; max-width: 100%;">
+          <img src="immagini/materia-ia1.jpg" alt="Immagine Intelligenza Artificiale" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </figure>
 
-            <h3 class="title is-4 has-text-primary mt-5">Strati convoluzionali</h3>
-            <p>Applicano la convoluzione tramite piccoli filtri chiamati kernel. I filtri scorrono sull’immagine ed estraggono caratteristiche importanti come bordi, linee e angoli. Ogni filtro produce una feature map, cioè una rappresentazione dell’immagine che evidenzia una certa caratteristica.</p>
+        <p>Le CNN (Convolutional Neural Networks) sono reti neurali utilizzate soprattutto per l’elaborazione delle immagini. Sono nate per superare i limiti delle normali reti neurali quando devono lavorare con immagini ad alta risoluzione.</p>
+        
+        <p>Le CNN funzionano analizzando l’immagine in modo gerarchico:</p>
+        <ul>
+          <li>i primi strati riconoscono caratteristiche semplici come bordi e linee;</li>
+          <li>gli strati successivi combinano queste informazioni per riconoscere forme più complesse;</li>
+          <li>gli ultimi strati riescono a identificare oggetti completi.</li>
+        </ul>
 
-            <h3 class="title is-4 has-text-primary mt-5">Strati di pooling</h3>
-            <p>Servono a ridurre la dimensionalità delle feature map mantenendo solo le informazioni più importanti. I principali tipi sono:</p>
-            <ul>
-              <li><strong>Max Pooling:</strong> prende il valore massimo;</li>
-              <li><strong>Average Pooling:</strong> prende la media.</li>
-            </ul>
-            <p>I vantaggi del pooling sono: riduzione della memoria usata; addestramento più veloce; minore overfitting; maggiore robustezza ai disturbi.</p>
+        <h3 class="title is-4 has-text-primary mt-5">Strati convoluzionali</h3>
+        <p>Applicano la convoluzione tramite piccoli filtri chiamati kernel. I filtri scorrono sull’immagine ed estraggono caratteristiche importanti come bordi, linee e angoli. Ogni filtro produce una feature map, cioè una rappresentazione dell’immagine che evidenzia una certa caratteristica.</p>
 
-            <h3 class="title is-4 has-text-primary mt-5">Flatten e classificazione finale</h3>
-            <p>Dopo convoluzione e pooling, i dati vengono trasformati in un vettore tramite il flatten e inviati a una rete neurale finale che esegue la classificazione. Per ottenere probabilità sulle classi si usa spesso la funzione Softmax.</p>
-          </div>
-          
-          <div class="column is-4">
-            <figure class="image">
-              <img src="immagini/materia-ia1.jpg" alt="Immagine Intelligenza Artificiale" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            </figure>
-          </div>
-        </div>
+        <h3 class="title is-4 has-text-primary mt-5">Strati di pooling</h3>
+        <p>Servono a ridurre la dimensionalità delle feature map mantenendo solo le informazioni più importanti. I principali tipi sono:</p>
+        <ul>
+          <li><strong>Max Pooling:</strong> prende il valore massimo;</li>
+          <li><strong>Average Pooling:</strong> prende la media.</li>
+        </ul>
+        <p>I vantaggi del pooling sono: riduzione della memoria usata; addestramento più veloce; minore overfitting; maggiore robustezza ai disturbi.</p>
+
+        <h3 class="title is-4 has-text-primary mt-5">Flatten e classificazione finale</h3>
+        <p>Dopo convoluzione e pooling, i dati vengono trasformati in un vettore tramite il flatten e inviati a una rete neurale finale che esegue la classificazione. Per ottenere probabilità sulle classi si usa spesso la funzione Softmax.</p>
+        
+        <div class="is-clearfix"></div>
+        
       </div>
     </div>
   </main>

@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Highlight active navbar item based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navbarItems = document.querySelectorAll('.navbar-item[href]');
+  
+  navbarItems.forEach(item => {
+    const href = item.getAttribute('href');
+    // Match the current page with the href
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      item.classList.add('is-active');
+    }
+  });
+
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 

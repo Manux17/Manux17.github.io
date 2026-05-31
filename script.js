@@ -135,7 +135,20 @@ function initFadeIn() {
   setTimeout(() => animated.forEach(el => el.classList.add('is-visible')), 800);
 }
 
+// Favicon condivisa (SVG inline): "R" bianca su tondo blu #004b87, in tinta
+// col tema. Iniettata qui così vale per tutte le pagine senza file aggiuntivi.
+function injectFavicon() {
+  if (document.querySelector('link[rel="icon"]')) return;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%23004b87"/><text x="16" y="22" font-family="Georgia, serif" font-size="20" font-weight="700" fill="%23ffffff" text-anchor="middle">R</text></svg>`;
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/svg+xml';
+  link.href = 'data:image/svg+xml,' + svg;
+  document.head.appendChild(link);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  injectFavicon();
   injectPartial('site-navbar', SITE_NAVBAR);
   injectPartial('site-footer', SITE_FOOTER);
   initNavbar();

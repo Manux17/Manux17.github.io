@@ -20,6 +20,23 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
   font-family: var(--bulma-family-secondary);
 }
 
+/* Titoli hero materia: alcune pagine hanno nomi lunghi (TPSIT, GPOI).
+   Su mobile il titolo is-2 a 2rem spezza le parole a metà ("Telecomunicazi-oni")
+   e occupa troppe righe. Riduciamo il corpo e abilitiamo una sillabazione
+   pulita, mantenendo il nome completo della materia. */
+.hero-body .title.is-2 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media screen and (max-width: 768px) {
+  .hero-body .title.is-2 {
+    font-size: 1.5rem;
+  }
+  .hero-body .subtitle.is-4 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Animations */
 /* Il contenuto è SEMPRE visibile di default. L'effetto di entrata viene
    applicato solo se il JS è attivo (classe .js su <html>), così senza

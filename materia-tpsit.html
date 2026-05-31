@@ -26,10 +26,6 @@
   <main class="section">
     <div class="container fade-in-up" style="max-width: 900px;">
       <div class="box content is-medium">
-        
-        <figure class="image is-pulled-right ml-5 mb-5" style="width: 350px; max-width: 100%;">
-          <img src="immagini/materia-tpsit.webp" alt="Immagine TPSIT" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        </figure>
 
         <p>La programmazione concorrente gestisce più processi che girano contemporaneamente condividendo risorse. I rischi principali sono: race condition, deadlock, starvation e inconsistenza dei dati. Per studiarli sono stati definiti quattro problemi classici.</p>
 
@@ -39,13 +35,17 @@
         <h3 class="title is-4 has-text-primary mt-5">2. Lettori e Scrittori</h3>
         <p>Più processi accedono a una risorsa condivisa (es. database): i lettori possono farlo contemporaneamente, gli scrittori no — devono avere accesso esclusivo. Il problema è bilanciare le priorità senza causare starvation.</p>
 
-        <figure class="image is-pulled-left mr-5 mb-5" style="width: 300px; max-width: 100%;">
-          <img src="immagini/materia-tpsit2.png" alt="Immagine TPSIT 2" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <figure class="image is-pulled-right ml-5 mb-5" style="width: 350px; max-width: 100%;">
+          <img src="immagini/materia-tpsit.webp" alt="Immagine TPSIT" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         </figure>
 
         <h3 class="title is-4 has-text-primary mt-5">3. Filosofi a Cena</h3>
         <p>Cinque filosofi condividono cinque bacchette: per mangiare ognuno ne ha bisogno di due. Se tutti prendono una bacchetta e aspettano l'altra si verifica deadlock. È il modello classico della competizione su risorse multiple.</p>
 
+         <figure class="image is-pulled-left mr-5 mb-5" style="width: 300px; max-width: 100%;">
+          <img src="immagini/materia-tpsit2.png" alt="Immagine TPSIT 2" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </figure>
+        
         <h3 class="title is-4 has-text-primary mt-5">4. Barbiere Sonnolento</h3>
         <p>Un barbiere serve un cliente alla volta; se non ci sono clienti dorme, se le sedie d'attesa sono piene il cliente va via. Il problema è sincronizzare correttamente l'accesso alla sala d'attesa. Modella sistemi di accodamento come call center e server.</p>
         

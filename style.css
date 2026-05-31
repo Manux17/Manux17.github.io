@@ -153,8 +153,3 @@ html {
   margin-bottom: 0;
   padding: 0;
 }
-
-/*cambia colore titolo*/
-.title.is-4 {
-  color: #66bfff !important;
-}

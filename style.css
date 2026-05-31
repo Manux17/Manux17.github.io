@@ -154,7 +154,3 @@ html {
   padding: 0;
 }
 
-/*cambia colore titolo*/
-.title.is-4.has-text-primary.mt-5 {
-  color: #66bfff !important;
-}

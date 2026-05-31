@@ -2,81 +2,82 @@
 // il contenuto. Senza JS (o se qualcosa va storto) il testo resta visibile.
 document.documentElement.classList.add('js');
 
-document.addEventListener('DOMContentLoaded', () => {
+// Carica un frammento condiviso (partials/) e lo inietta al posto del segnaposto.
+function loadPartial(id, url) {
+  const mount = document.getElementById(id);
+  if (!mount) return Promise.resolve();
+  return fetch(url)
+    .then(r => {
+      if (!r.ok) throw new Error(r.status + ' ' + url);
+      return r.text();
+    })
+    // Sorgente fidata: file statico dello stesso sito (nessun input utente),
+    // quindi l'assegnazione di outerHTML qui non comporta rischi XSS.
+    .then(html => { mount.outerHTML = html; })
+    .catch(err => console.error('Impossibile caricare', url, err));
+}
 
-  // Highlight active navbar item based on current page
+// Logica della navbar: va eseguita DOPO l'iniezione (gli elementi non
+// esistono finché il partial non è stato inserito).
+function initNavbar() {
+  // Evidenzia la voce corrispondente alla pagina corrente
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navbarItems = document.querySelectorAll('.navbar-item[href]');
-  
-  navbarItems.forEach(item => {
+  document.querySelectorAll('.navbar-item[href]').forEach(item => {
     const href = item.getAttribute('href');
-    // Match the current page with the href
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       item.classList.add('is-active');
     }
   });
 
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  // Add a click event on each of them
-  $navbarBurgers.forEach( el => {
+  // Apertura/chiusura del menu su mobile (burger)
+  document.querySelectorAll('.navbar-burger').forEach(el => {
     el.addEventListener('click', () => {
-      // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
-
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      const target = document.getElementById(el.dataset.target);
       el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
+      if (target) target.classList.toggle('is-active');
     });
   });
 
-  // Mobile dropdown toggle fix
-  const $dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
-  $dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
-      if (window.innerWidth <= 1023) {
-        dropdown.classList.toggle('is-active');
-      }
+  // Apertura del dropdown "Materie" al tap su mobile
+  document.querySelectorAll('.navbar-item.has-dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      if (window.innerWidth <= 1023) dropdown.classList.toggle('is-active');
     });
   });
+}
 
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
+// Animazioni di entrata. Il contenuto resta comunque sempre visibile grazie
+// ai fallback qui sotto, anche se l'IntersectionObserver non scatta.
+function initFadeIn() {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { root: null, rootMargin: '0px', threshold: 0.15 });
 
-  const animatedElements = document.querySelectorAll('.fade-in-up');
-  animatedElements.forEach(el => {
-    observer.observe(el);
-  });
+  const animated = document.querySelectorAll('.fade-in-up');
+  animated.forEach(el => observer.observe(el));
 
-  // Fallback di sicurezza: rivela tutto ciò che è già in viewport e,
-  // dopo un breve ritardo, ogni elemento rimasto. Così nessun testo
-  // resta invisibile se l'IntersectionObserver non scatta.
   const revealIfVisible = () => {
-    animatedElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('is-visible');
-      }
+    animated.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
     });
   };
   window.addEventListener('load', revealIfVisible);
   revealIfVisible();
-  setTimeout(() => {
-    animatedElements.forEach(el => el.classList.add('is-visible'));
-  }, 800);
+  // Rete di sicurezza: dopo un breve ritardo rivela tutto ciò che è rimasto.
+  setTimeout(() => animated.forEach(el => el.classList.add('is-visible')), 800);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  Promise.all([
+    loadPartial('site-navbar', 'partials/navbar.html'),
+    loadPartial('site-footer', 'partials/footer.html')
+  ]).then(initNavbar);
+
+  initFadeIn();
 });

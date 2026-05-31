@@ -57,6 +57,27 @@ html {
   color: #004b87 !important;
 }
 
+/* Navbar desktop: link bianchi leggibili sul blu (contrasto 8.95:1).
+   Mirato alle voci di primo livello (.navbar-start > .navbar-item) per non
+   toccare le voci del dropdown, che restano blu su sfondo bianco.
+   Su mobile vale invece il blocco @media qui sotto (menu bianco, testo scuro). */
+@media screen and (min-width: 1024px) {
+  .navbar.is-primary .navbar-start > .navbar-item,
+  .navbar.is-primary .navbar-start > .navbar-item > .navbar-link {
+    color: #ffffff !important;
+  }
+  .navbar.is-primary .navbar-start > .navbar-item:hover,
+  .navbar.is-primary .navbar-start > a.navbar-item:focus,
+  .navbar.is-primary .navbar-start > .navbar-item.is-active,
+  .navbar.is-primary .navbar-start > .navbar-item.has-dropdown:hover > .navbar-link {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+  }
+  .navbar.is-primary .navbar-start > .navbar-item > .navbar-link::after {
+    border-color: #ffffff !important;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .navbar-menu {
     background-color: #ffffff !important;

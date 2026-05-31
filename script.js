@@ -1,3 +1,7 @@
+// Segnala che il JS è attivo: solo allora le animazioni fade-in nascondono
+// il contenuto. Senza JS (o se qualcosa va storto) il testo resta visibile.
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Highlight active navbar item based on current page
@@ -58,4 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
   animatedElements.forEach(el => {
     observer.observe(el);
   });
+
+  // Fallback di sicurezza: rivela tutto ciò che è già in viewport e,
+  // dopo un breve ritardo, ogni elemento rimasto. Così nessun testo
+  // resta invisibile se l'IntersectionObserver non scatta.
+  const revealIfVisible = () => {
+    animatedElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      }
+    });
+  };
+  window.addEventListener('load', revealIfVisible);
+  revealIfVisible();
+  setTimeout(() => {
+    animatedElements.forEach(el => el.classList.add('is-visible'));
+  }, 800);
 });
